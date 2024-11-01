@@ -5,7 +5,7 @@ import TurfCard from "../components/TurfCard";
 
 function Turfs() {
   const [turfs, setTurfs] = useState([]);
-//   const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchTurfs = async () => {
@@ -19,7 +19,6 @@ function Turfs() {
     try {
       await axios.post("/api/bookings", { turfId: turf._id });
       alert("Booking successful!");
-    // eslint-disable-next-line no-unused-vars
     } catch (_) {
       alert("Booking failed");
     }
